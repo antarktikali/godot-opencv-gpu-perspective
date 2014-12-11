@@ -1,0 +1,17 @@
+Import('env')
+
+env.add_source_files(env.modules_sources,"*.cpp")
+# Don't know a better way of doing this, but it works
+env.Append(CPPFLAGS=["-lopencv_core"])
+env.Append(CPPFLAGS=["-lopencv_imgproc"])
+env.Append(CPPFLAGS=["-lopencv_highgui"])
+env.Append(CPPFLAGS=["-lopencv_objdetect"])
+env.Append(CPPFLAGS=["-lopencv_gpu"])
+env.Append(CPPFLAGS=["-pthread"])
+
+env.Append(LINKFLAGS=["-lopencv_core"])
+env.Append(LINKFLAGS=["-lopencv_imgproc"])
+env.Append(LINKFLAGS=["-lopencv_highgui"])
+env.Append(LINKFLAGS=["-lopencv_objdetect"])
+env.Append(LINKFLAGS=["-lopencv_gpu"])
+env.Append(LINKFLAGS=["-pthread"])
